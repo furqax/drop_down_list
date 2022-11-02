@@ -185,7 +185,9 @@ class _MainBodyState extends State<MainBody> {
                       ),
                     ),
                     onTap: widget.dropDown.enableMultipleSelection
-                        ? null
+                        ? (){setState(() {
+                                      mainList[index].isSelected = !isSelected;
+                                    });}
                         : () {
                             widget.dropDown.selectedItems?.call([mainList[index]]);
                             _onUnFocusKeyboardAndPop();
